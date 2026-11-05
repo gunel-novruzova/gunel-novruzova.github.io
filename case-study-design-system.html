@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A multi-select for linking contracts and NCRs | Gunel Novruzova</title>
+<meta name="description" content="Case study: a reusable multi-select component for an enterprise form, with a working interactive demo.">
+<meta property="og:title" content="A multi-select for linking contracts and NCRs | Gunel Novruzova">
+<meta property="og:description" content="Case study: a reusable multi-select component for an enterprise form, with a working interactive demo.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://gunel-novruzova.github.io/portfolio/case-study-design-system.html">
+<meta property="og:url" content="https://gunel-novruzova.github.io/portfolio/case-study-design-system.html">
+<meta property="og:site_name" content="Gunel Novruzova">
+<meta property="og:image" content="https://gunel-novruzova.github.io/portfolio/assets/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gunel Novruzova, product designer for enterprise software and websites">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A multi-select for linking contracts and NCRs | Gunel Novruzova">
+<meta name="twitter:description" content="Case study: a reusable multi-select component for an enterprise form, with a working interactive demo.">
+<meta name="twitter:image" content="https://gunel-novruzova.github.io/portfolio/assets/images/og.jpg">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#111312">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js-motion')}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Gunel Novruzova, home">Gunel<span class="brand-rest"> Novruzova</span></a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav-home" href="index.html">Home</a>
+      <a href="index.html#experience">Expertise</a>
+      <a href="case-studies.html" aria-current="page">Case studies</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="detail">
+  <div class="wrap">
+    <a class="back" href="case-studies.html"><span class="bar"></span>All projects</a>
+    <article class="case dmp" id="design-system" aria-labelledby="ds-title">
+        <header class="dmp-head">
+          <p class="eyebrow-tags"><span>Case study</span><span>Design system</span><span>April 2026</span></p>
+          <h1 id="ds-title">A multi-select for linking contracts and NCRs</h1>
+          <p class="case-sub">Designing a scalable multi-entity selection and linking pattern for enterprise workflows.</p>
+        </header>
+        <dl class="facts">
+          <div><dt>Role</dt><dd>Product designer</dd></div>
+          <div><dt>Type</dt><dd>Design system component</dd></div>
+          <div><dt>Used in</dt><dd>Performance Improvement Plan form</dd></div>
+          <div><dt>Date</dt><dd>April 2026</dd></div>
+        </dl>
+
+        <section class="story reveal">
+          <div class="story-label"><span class="story-num">01</span><h2>Overview</h2></div>
+          <div class="text"><p>The Performance Improvement Plan (PIP) form is used to document and manage performance issues by linking them to relevant external contracts and related non-conformance records (NCRs). Within this workflow, users are required to accurately associate contractual references and compliance issues to ensure traceability, accountability, and consistent reporting. The External Contract and NCR fields play a critical role in maintaining data integrity, as incorrect or missing associations can lead to reporting gaps and operational risks.</p></div>
+        </section>
+        <figure class="figure narrow reveal"><img src="assets/images/ds/form.webp" alt="Multi-select component design in the PIP form" loading="lazy" width="1440" height="1534"></figure>
+
+        <section class="story reveal">
+          <div class="story-label"><span class="story-num">02</span><h2>Try the component</h2></div>
+          <div class="text"><p>This is a working version, built for this page. Search, select several records, remove them with the keyboard or mouse, and switch between states. The records are sample data.</p></div>
+        </section>
+        <div class="demo" aria-label="Interactive multi-select demo">
+          <div class="demo-bar">
+            <strong>Performance Improvement Plan (sample)</strong>
+            <div class="seg" role="group" aria-label="Component state">
+              <button type="button" data-mode="default" aria-pressed="true">Default</button>
+              <button type="button" data-mode="error" aria-pressed="false">Error</button>
+              <button type="button" data-mode="disabled" aria-pressed="false">Disabled</button>
+            </div>
+          </div>
+          <div class="demo-body" id="demo-fields"></div>
+          <div class="demo-foot">
+            <button type="button" class="btn btn-primary" id="demo-save">Save plan</button>
+            <span class="demo-status" id="demo-status" role="status" aria-live="polite"></span>
+          </div>
+          <p class="demo-note">Keys: type to filter, Arrow keys to move, Enter to select, Backspace to remove the last item, Escape to close.</p>
+        </div>
+
+        <section class="story reveal">
+          <div class="story-label"><span class="story-num">03</span><h2>Component Anatomy</h2></div>
+          <div class="text"><p>The multi-select field group was designed as a reusable system component to support consistent selection and linking patterns across multiple workflows. Its anatomy includes a clear label, selection container, selected item tokens, overflow handling, helper and error messaging, and a structured dropdown list, enabling users to review and manage multiple selections efficiently. By defining each element of the component explicitly, the design ensures predictable behavior, easier reuse across different contexts, and alignment between design and development as the product scales.</p></div>
+        </section>
+        <figure class="figure reveal"><img src="assets/images/ds/anatomy.webp" alt="Component anatomy diagram" loading="lazy" width="1206" height="779"></figure>
+
+        <section class="story reveal">
+          <div class="story-label"><span class="story-num">04</span><h2>States &amp; Design Tokens</h2></div>
+          <div class="text"><p>The multi-select component was designed with clearly defined interaction states to guide users through complex selections and reduce errors during form completion. Visual feedback across default, selected, disabled, and error states helps users understand system expectations and prevents invalid submissions. Design tokens ensure these states remain consistent across the product, enabling faster implementation, easier maintenance, and a reliable user experience as workflows and requirements evolve.</p></div>
+        </section>
+        <figure class="figure reveal"><img src="assets/images/ds/tokens.webp" alt="Component states and design tokens" loading="lazy" width="1206" height="1547"></figure>
+      </article>
+    <nav class="next" aria-label="Next project">
+      <span class="next-label">Next project</span>
+      <a class="next-title" href="case-study-damla.html">Damla Group: a website for a hospitality group</a>
+    </nav>
+  </div>
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Hiring a product designer, or got a workflow that needs untangling?</h2>
+    <p class="lede">Write to me. I reply within 48 hours.</p>
+    <div class="contact-cta"><a class="btn btn-light" href="contact.html">Get in touch</a></div>
+    <ul class="contact-links">
+      <li><a href="mailto:gnovruzova86@gmail.com">gnovruzova86@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/gunel-novruzova-77689978/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/gunelnovruzova" target="_blank" rel="noopener">Behance</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Gunel Novruzova</span>
+    <span>Baku, Azerbaijan</span>
+  </div>
+</footer>
+
+<script src="assets/multiselect-demo.js"></script>
+<script src="assets/motion.js"></script>
+</body>
+</html>
